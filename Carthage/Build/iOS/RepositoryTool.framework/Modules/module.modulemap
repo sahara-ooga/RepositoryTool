@@ -1,0 +1,11 @@
+framework module RepositoryTool {
+  umbrella header "RepositoryTool.h"
+
+  export *
+  module * { export * }
+}
+
+module RepositoryTool.Swift {
+    header "RepositoryTool-Swift.h"
+    requires objc
+}
