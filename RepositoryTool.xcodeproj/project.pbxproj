@@ -10,6 +10,7 @@
 		10BFD9F2204C26730089D9F1 /* RepositoryTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BFD9E8204C26730089D9F1 /* RepositoryTool.framework */; };
 		10BFD9F7204C26730089D9F1 /* RepositoryToolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BFD9F6204C26730089D9F1 /* RepositoryToolTests.swift */; };
 		10BFD9F9204C26730089D9F1 /* RepositoryTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 10BFD9EB204C26730089D9F1 /* RepositoryTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10BFDA03204C27C80089D9F1 /* RepositoryTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BFDA02204C27C80089D9F1 /* RepositoryTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		10BFD9F1204C26730089D9F1 /* RepositoryToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepositoryToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10BFD9F6204C26730089D9F1 /* RepositoryToolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryToolTests.swift; sourceTree = "<group>"; };
 		10BFD9F8204C26730089D9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10BFDA02204C27C80089D9F1 /* RepositoryTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				10BFD9EB204C26730089D9F1 /* RepositoryTool.h */,
 				10BFD9EC204C26730089D9F1 /* Info.plist */,
+				10BFDA02204C27C80089D9F1 /* RepositoryTool.swift */,
 			);
 			path = RepositoryTool;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					10BFD9E7204C26730089D9F1 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					10BFD9F0204C26730089D9F1 = {
@@ -196,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10BFDA03204C27C80089D9F1 /* RepositoryTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +339,7 @@
 		10BFD9FD204C26730089D9F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +353,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.sundaycarpenter.RepositoryTool;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +362,7 @@
 		10BFD9FE204C26730089D9F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -376,6 +384,7 @@
 		10BFDA00204C26730089D9F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BLC5H2QH6K;
 				INFOPLIST_FILE = RepositoryToolTests/Info.plist;
@@ -390,6 +399,7 @@
 		10BFDA01204C26730089D9F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BLC5H2QH6K;
 				INFOPLIST_FILE = RepositoryToolTests/Info.plist;
