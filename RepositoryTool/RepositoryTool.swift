@@ -54,6 +54,7 @@ public protocol ComparableRepositoryElement: RepositoryElement where Identifier:
     
 }
 
+//todo: Introduce Result library
 public enum Result<Element, SomeError: Error> {
     case success(Element)
     case failure(SomeError)
@@ -65,3 +66,7 @@ public protocol Query { }
 
 //ToDo: Sortの満たすべき条件を考える
 public protocol Sort { }
+
+public protocol QuaryManagable {
+    associatedtype Que: Query
+}
