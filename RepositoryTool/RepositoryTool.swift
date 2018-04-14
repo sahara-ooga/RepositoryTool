@@ -13,21 +13,21 @@ public protocol Repository {
     associatedtype Element: RepositoryElement
 }
 
-public protocol SyncRepository: Repository {
+public protocol SyncRepository: Repository, QuaryManagable {
     func find(of id: Element.Identifier) -> Element?
-    func findAll(query: Query?) -> [Element]
+    func findAll(query: Que?) -> [Element]
     @discardableResult func save(_ elements: [Element]) -> Bool
     @discardableResult func delete(_ elements: [Element]) -> Bool
 }
 
-public protocol AsyncRepository: Repository {
+public protocol AsyncRepository: Repository, QuaryManagable {
     associatedtype DomainError: Error
     
     typealias SingleCompletion = (Result<Element?, DomainError>) -> Void
     typealias PluralCompletion = (Result<[Element], DomainError>) -> Void
     
     func find(of id: Element.Identifier, completion: SingleCompletion)
-    func findAll(query: Query?, completion: PluralCompletion)
+    func findAll(query: Que?, completion: PluralCompletion)
     func save(_ elements: [Element], completion: PluralCompletion)
     func delete(_ elements: [Element], completion: PluralCompletion)
 }
