@@ -33,13 +33,13 @@ public protocol AsyncRepository: Repository, QuaryManagable {
 }
 
 // MARK: SortableRepository
-public protocol SortableSyncRepository: SyncRepository where Element: ComparableRepositoryElement {
-    func findAll(query: Query?, sort: Sort?) -> Bool
+public protocol SortableSyncRepository: Sortable, SyncRepository where Element: ComparableRepositoryElement {
+    func findAll(query: Que?, sort: SortObject?) -> Bool
     @discardableResult func save(_ elements: [Element], sort: Sort?) -> Bool
 }
 
-public protocol SortableAsyncRepository: AsyncRepository where Element: ComparableRepositoryElement {
-    func findAll(query: Query?, sort: Sort?, completion: PluralCompletion)
+public protocol SortableAsyncRepository: Sortable, AsyncRepository where Element: ComparableRepositoryElement {
+    func findAll(query: Que?, sort: SortObject?, completion: PluralCompletion)
     func save(_ elements: [Element], sort: Sort?, completion: PluralCompletion)
 }
 
@@ -50,9 +50,7 @@ public protocol RepositoryElement {
     var id: Identifier {get}
 }
 
-public protocol ComparableRepositoryElement: RepositoryElement where Identifier: Comparable {
-    
-}
+public protocol ComparableRepositoryElement: RepositoryElement where Identifier: Comparable { }
 
 //todo: Introduce Result library
 public enum Result<Element, SomeError: Error> {
@@ -69,4 +67,8 @@ public protocol Sort { }
 
 public protocol QuaryManagable {
     associatedtype Que: Query
+}
+
+public protocol Sortable {
+    associatedtype SortObject: Sort
 }
